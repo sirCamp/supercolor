@@ -12,10 +12,10 @@
   },
   "homepage": "https://github.com/sirCamp/supercolor",
   "keywords": [
-    "\"color\"",
-    "\"hexadecimal\"",
-    "\"rgb\"",
-    "\"colors\""
+    "color",
+    "hexadecimal",
+    "rgb",
+    "colors"
   ],
   "author": "sirCamp",
   "license": "MIT",
