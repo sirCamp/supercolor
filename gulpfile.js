@@ -20,7 +20,7 @@ var banner = ['/**',
   ''].join('\n');
 
 gulp.task('e2eTest', function() {
-    gulp.src(['./test/**/*_spec.js'])
+    gulp.src(['./test/**/*_test.js'])
         .pipe(protractor({
             configFile: "protractor_conf.js",
         }))

@@ -2,10 +2,10 @@
  * supercolor - A simple library for color management
  * @author sirCamp
  * @version v0.0.1
- * @link 
+ * @link https://github.com/sirCamp/supercolor
  * @license MIT
  */
-Color2 = function(options){
+Color = function(options){
 
 	this.palette       = [];
 	this.customColors  = [];
@@ -16,10 +16,10 @@ Color2 = function(options){
 	
 };
 
-Color2.hexadecimalChar = "0123456789ABCDEF";
+Color.hexadecimalChar = "0123456789ABCDEF";
 
 
-Color2.prototype.init = function(options){
+Color.prototype.init = function(options){
 
 
 	this.starterColors = ["#F2EAD0",	"#006383",	"#F2B872",	"#268080",	"#F2561D",	"#672A41",	"#00B7B7",	"#D92E1E",	"#D91657",
@@ -35,19 +35,19 @@ Color2.prototype.init = function(options){
 	this.palette.push(new Palette("bluevariant",["#303F9F", "#3F51B5","#C5CAE9","#448AFF","#FFFFFF"]));
 	this.palette.push(new Palette("yellowvariant",["#FBC02D", "#FFEB3B","#FFF9C4","#FFEB3B","#FFFFFF"]));
 
-	this.hexadecimalChar = Color2.hexadecimalChar;
+	this.hexadecimalChar = Color.hexadecimalChar;
 
 };
 
-Color2.prototype.getColors = function(){
+Color.prototype.getColors = function(){
 	return this.starterColors;
 };
 
-Color2.prototype.getCustomColors = function(){
+Color.prototype.getCustomColors = function(){
 	return this.customColors;
 };
 
-Color2.prototype.setCustomColors = function(colors){
+Color.prototype.setCustomColors = function(colors){
 	
 	if( colors instanceof Array){
 		this.customColors = colors;
@@ -57,12 +57,12 @@ Color2.prototype.setCustomColors = function(colors){
 	}
 };
 
-Color2.prototype.getPalette = function(){
+Color.prototype.getPalette = function(){
 
 	return this.palette;
 };
 
-Color2.prototype.addPalette = function(palette){
+Color.prototype.addPalette = function(palette){
 	if(palette.hasOwnProperty("name") && palette.hasOwnProperty("colors")){
 		
 		this.palette.push(new Palette(palette.name,palette.colors));
@@ -72,7 +72,7 @@ Color2.prototype.addPalette = function(palette){
 	}	
 };
 
-Color2.prototype.removePaletteByIndex = function(index){
+Color.prototype.removePaletteByIndex = function(index){
 	if(typeof(index) === 'number'){
 		return this.palette.splice(0,index).concat(this.palette.slice(index,this.palette.length));
 	}
@@ -82,7 +82,7 @@ Color2.prototype.removePaletteByIndex = function(index){
 
 };
 
-Color2.prototype.removePaletteByName = function(name){
+Color.prototype.removePaletteByName = function(name){
 	
 	if(typeof(index) === 'string'){
 		var found = false;
@@ -107,7 +107,7 @@ Color2.prototype.removePaletteByName = function(name){
 	}
 };
 
-Color2.prototype.getPaletteByIndex = function(index){
+Color.prototype.getPaletteByIndex = function(index){
 	if(typeof(index) === 'number'){
 		return this.palette[index];
 	}
@@ -116,7 +116,7 @@ Color2.prototype.getPaletteByIndex = function(index){
 	}	
 };
 
-Color2.prototype.getPaletteByName = function(name){
+Color.prototype.getPaletteByName = function(name){
 	
 	if(typeof(name) === 'string'){
 		for(var i = 0; i < this.palette.length; i++){
@@ -131,40 +131,40 @@ Color2.prototype.getPaletteByName = function(name){
 	}
 };
 
-Color2.prototype.getRandomStarterColor = function(){
+Color.prototype.getRandomStarterColor = function(){
 
 	return this.starterColor[(Math.floor(Math.random() * this.starterColors.length) )]; 
 };
 
-Color2.prototype.getRandomCustomColor = function(){
+Color.prototype.getRandomCustomColor = function(){
 
 	return this.starterColor[(Math.floor(Math.random() * this.starterColors.length) )]; 
 };
 
 
-Color2.prototype.getRandomPalette =  function(){
+Color.prototype.getRandomPalette =  function(){
 	
 	return this.palette[(Math.floor(Math.random() * this.palette.length))];
 };
 
-Color2.prototype.getRandomColorFromPaletteIndex = function(index){
+Color.prototype.getRandomColorFromPaletteIndex = function(index){
 	
 	return this.getPaletteByIndex(index).getRandomColor();
 };
 
-Color2.prototype.getRandomColorFromPaletteName = function(name){
+Color.prototype.getRandomColorFromPaletteName = function(name){
 	
 	return this.getPaletteByName(name).getRandomColor();
 	 
 };
 
-Color2.prototype.getRandomColorFromRandomPalette = function(){
+Color.prototype.getRandomColorFromRandomPalette = function(){
 	
 	return this.getRandomPalette().getRandomColor();
 };
 
 /*STATIC FUNCTION*/
-Color2.convertFromHextoRGB = function(color){
+Color.convertFromHextoRGB = function(color){
 
 	var total = [];
 	if(color.length  <= 7 && color.length  > 3){
@@ -182,15 +182,15 @@ Color2.convertFromHextoRGB = function(color){
 
 };
 
-Color2.convertFromRGBtoHex = function(r,g,b){
+Color.convertFromRGBtoHex = function(r,g,b){
 	
 	var color = "";
 	var total = [r,g,b];
 	for(var i = 0; i < total.length; i++){
 
 		if(typeof(total[i]) === 'number' && total[i] >= 0 && total[i] <= 255 ){
-			color = color + Color2.hexadecimalChar.charAt((total[i]-total[i]%16)/16);
-			color = color + Color2.hexadecimalChar.charAt(total[i]%16);
+			color = color + Color.hexadecimalChar.charAt((total[i]-total[i]%16)/16);
+			color = color + Color.hexadecimalChar.charAt(total[i]%16);
 		}
 		else{
 			throw Error("You must pass a valid RBG color!");
@@ -200,7 +200,7 @@ Color2.convertFromRGBtoHex = function(r,g,b){
 	
 };
 
-Color2.getRangeOfHexColors = function(from,to){
+Color.getRangeOfHexColors = function(from,to){
 
 	from = from.substring(1,7);
 	to = to.substring(1,7);
@@ -221,7 +221,7 @@ Color2.getRangeOfHexColors = function(from,to){
 	return color; 
 };
 
-Color2.getRangeOfRGBColors = function(from,to){
+Color.getRangeOfRGBColors = function(from,to){
 
 	var colorFrom = "";
 	var colorTo = "";
@@ -229,8 +229,8 @@ Color2.getRangeOfRGBColors = function(from,to){
 	for(var i = 0; i < from.length; i++){
 
 		if(typeof(from[i]) === 'number' && from[i] >= 0 && from[i] <= 255 ){
-			colorFrom = colorFrom + Color2.hexadecimalChar.charAt((from[i]-from[i]%16)/16);
-			colorFrom = colorFrom + Color2.hexadecimalChar.charAt(from[i]%16);
+			colorFrom = colorFrom + Color.hexadecimalChar.charAt((from[i]-from[i]%16)/16);
+			colorFrom = colorFrom + Color.hexadecimalChar.charAt(from[i]%16);
 		}
 		else{
 			throw Error("You must pass a valid RBG color!");
@@ -241,8 +241,8 @@ Color2.getRangeOfRGBColors = function(from,to){
 	for( i = 0; i < to.length; i++){
 
 		if(typeof(to[i]) === 'number' && to[i] >= 0 && to[i] <= 255 ){
-			colorTo = colorTo + Color2.hexadecimalChar.charAt((to[i]-to[i]%16)/16);
-			colorTo = colorTo + Color2.hexadecimalChar.charAt(to[i]%16);
+			colorTo = colorTo + Color.hexadecimalChar.charAt((to[i]-to[i]%16)/16);
+			colorTo = colorTo + Color.hexadecimalChar.charAt(to[i]%16);
 		}
 		else{
 			throw Error("You must pass a valid RBG color!");
@@ -256,37 +256,37 @@ Color2.getRangeOfRGBColors = function(from,to){
 
 	while(fromInt < toInt){
 
-		color.push(Color2.convertFromHextoRGB("#"+fromInt.toString(16).toUpperCase()));
+		color.push(Color.convertFromHextoRGB("#"+fromInt.toString(16).toUpperCase()));
 		fromInt = fromInt + 1;
 
 	}
 
-	color.push(Color2.convertFromHextoRGB("#"+toInt.toString(16).toUpperCase()));
+	color.push(Color.convertFromHextoRGB("#"+toInt.toString(16).toUpperCase()));
 	
 	return color; 
 };
 
-Color2.getRandomColor = function(){
+Color.getRandomColor = function(){
 	return ('#'+Math.floor(Math.random()*16777215).toString(16)).toUpperCase();
 };
 
-Color2.generateRandomPalette = function(){
+Color.generateRandomPalette = function(){
 
 	return Palette.generateRandomPalette();
 };
 
 /*Injecting STATIC function in object*/
-Color2.prototype.convertFromHextoRGB = Color2.convertFromHextoRGB;
+Color.prototype.convertFromHextoRGB = Color.convertFromHextoRGB;
 
-Color2.prototype.cconvertFromRGBtoHex = Color2.convertFromRGBtoHex;
+Color.prototype.cconvertFromRGBtoHex = Color.convertFromRGBtoHex;
 
-Color2.prototype.getRangeOfHexColors = Color2.getRangeOfHexColors;
+Color.prototype.getRangeOfHexColors = Color.getRangeOfHexColors;
 
-Color2.prototype.getRangeOfRGBColors = Color2.getRangeOfRGBColors;
+Color.prototype.getRangeOfRGBColors = Color.getRangeOfRGBColors;
 
-Color2.prototype.getRandomColor = Color2.getRandomColor;
+Color.prototype.getRandomColor = Color.getRandomColor;
 
-Color2.prototype.generateRandomPalette  = Color2.generateRandomPalette ;
+Color.prototype.generateRandomPalette  = Color.generateRandomPalette ;
 
 
 
