@@ -6,6 +6,11 @@
   "scripts": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sirCamp/supercolor.git"
+  },
+  "homepage": "https://github.com/sirCamp/supercolor",
   "keywords": [
     "\"color\"",
     "\"hexadecimal\"",
@@ -14,6 +19,9 @@
   ],
   "author": "sirCamp",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sirCamp/supercolor/issues"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-add-src": "^0.2.0",
