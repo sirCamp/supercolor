@@ -32,7 +32,7 @@ Color.prototype.init = function(options){
 
 };
 
-Color.prototype.getColors = function(){
+Color.prototype.getStarterColors = function(){
 	return this.starterColors;
 };
 
