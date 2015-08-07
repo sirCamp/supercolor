@@ -184,4 +184,19 @@ This method returns a random color from a random palette
 color.getRandomColorFromRandomPalette();
 ```
 
+#### getRandomColor
+This method returns a random generated color (Hexadecimal format)
+
+```javascript
+//This is a static function
+Color.getRandomColor();
+```
+#### generateRandomPalette
+This method returns a random generated palette of colors
+
+```javascript
+//This is a static function
+Color.generateRandomPalette();
+```
+
 
