@@ -17,7 +17,9 @@ N.B this is a standalone library write with pure JavaScript Object using prototy
 
 var options is a optional paramters, if you want you can create object anyway without options
 ```javascript
-var options = {};
+var options = {
+  customColors:  ["#FBC02D", "#FFEB3B","#FFF9C4","#FFEB3B","#FFFFFF"]
+};
 
 var color = new Color(options);
 ```
