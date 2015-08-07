@@ -2,13 +2,11 @@
 [![devDependency Status](https://david-dm.org/sircamp/supercolor/dev-status.png)](https://david-dm.org/sircamp/supercolor#info=devDependencies)
 
 # SupercolorJS
-A simple library for color management inside your projects
+A simple library for color management inside your projects.
+
 With this library you can create, delete and manage your color palettes, get random color, get all colors between a range of two colors, get and generate random palette or get radom color from palette, generate random palette, convert color from Hex to RGB and viceversa.
 
 N.B this is a standalone library write with pure JavaScript Object using prototype
-
-## INSTALLATION
-
 
 
 ## USAGE
