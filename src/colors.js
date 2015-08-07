@@ -5,7 +5,7 @@ Color = function(options){
 	this.starterColors = [];
 	this.hexadecimalChar = "";
 
-	this.init();
+	this.init(options);
 	
 };
 
@@ -14,14 +14,22 @@ Color.hexadecimalChar = "0123456789ABCDEF";
 
 Color.prototype.init = function(options){
 
-
-	this.starterColors = ["#F2EAD0",	"#006383",	"#F2B872",	"#268080",	"#F2561D",	"#672A41",	"#00B7B7",	"#D92E1E",	"#D91657",
-	"#9D5A7B",	"#6E8AC8",	"#B05E65",	"#BF8C60",	"#51BBFE",	"#FA4731",	"#143259",	"#51FED2",	"#102D40",	"#81A5F7",	"#51FEA8",
-	"#2D5159",	"#F2561D",	"#78CFDA",	"#51A8FE",	"#8C2A5B",	"#F2B872",	"#8C2A5B",	"#F9CA3D",	"#517DFE",	"#DFF2ED",	"#6951FE",
-	"#51D4FF",	"#D9C7C1",	"#B7EDFF",	"#85B9CA",	"#85CACA",	"#BF7534",	"#BFAB28",	"#F2EAD0",	"#A65C32",	"#BF6545",	"#51FED3",
-	"#7F468B",	"#BF8C60",	"#6295D9",	"#040037",	"#FF9335",	"#5B1409",	"#9451FE",	"#143259",	"#FFC040",	"#518FFE",	"#00EAEA",
-	"#5164FF",	"#E49D6B",	"#008383",	"#6393A6",	"#294D9E",	"#E49D6B",	"#A61C1C",	"#51FEFE",	"#732C02",	"#F27F1B",	"#6BC6E4",
-	"#BB5255"];
+	if(options.starteColors != undefined && options.starterColors != null){
+		this.starterColors = options.starterColors;
+	}
+	else{
+		this.starterColors = ["#F2EAD0",	"#006383",	"#F2B872",	"#268080",	"#F2561D",	"#672A41",	"#00B7B7",	"#D92E1E",	"#D91657",
+		"#9D5A7B",	"#6E8AC8",	"#B05E65",	"#BF8C60",	"#51BBFE",	"#FA4731",	"#143259",	"#51FED2",	"#102D40",	"#81A5F7",	"#51FEA8",
+		"#2D5159",	"#F2561D",	"#78CFDA",	"#51A8FE",	"#8C2A5B",	"#F2B872",	"#8C2A5B",	"#F9CA3D",	"#517DFE",	"#DFF2ED",	"#6951FE",
+		"#51D4FF",	"#D9C7C1",	"#B7EDFF",	"#85B9CA",	"#85CACA",	"#BF7534",	"#BFAB28",	"#F2EAD0",	"#A65C32",	"#BF6545",	"#51FED3",
+		"#7F468B",	"#BF8C60",	"#6295D9",	"#040037",	"#FF9335",	"#5B1409",	"#9451FE",	"#143259",	"#FFC040",	"#518FFE",	"#00EAEA",
+		"#5164FF",	"#E49D6B",	"#008383",	"#6393A6",	"#294D9E",	"#E49D6B",	"#A61C1C",	"#51FEFE",	"#732C02",	"#F27F1B",	"#6BC6E4",
+		"#BB5255"];
+	}
+	
+	if(options.customColors != undefined && options.customColors != null){
+		this.customColors = options.customColors;
+	}
 	
 	this.palette.push(new Palette("redvariant",["#D32F2F", "#F44336","#FF5252","#FFCDD2","#FFFFFF"]));
 	this.palette.push(new Palette("greenvariant",["#388E3C", "#4CAF50","#C8E6C9","#8BC34A","#FFFFFF"]));
