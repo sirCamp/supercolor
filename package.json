@@ -1,7 +1,7 @@
 {
   "name": "supercolor",
-  "version": "0.0.1",
-  "description": "A simple library for color management",
+  "version": "1.0.0",
+  "description": "A library for colors management/conversion inside your projects",
   "main": "index.js",
   "scripts": {
     "test": "test"
