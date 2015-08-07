@@ -79,3 +79,58 @@ This method allow you to set a custom color array
 ```javascript
 color.setCustomColors(colors);
 ```
+
+#### getPalette
+This returns all palettes of colors that you have set
+
+```javascript
+var palettes = [];
+palettes = color.getPalette();
+```
+#### addPalette
+This method allows you to add a new palette of colors to your project
+
+```javascript
+var palette = {
+  name: "YellowPalette",
+  colors: ["#FBC02D", "#FFEB3B","#FFF9C4","#FFEB3B","#FFFFFF"]
+};
+
+color.addPalette(palette);
+```
+
+#### removePaletteByIndex
+This method allows you to remove a pelette by index obtained by *getPalette()* result
+
+```javascript
+var indexOfPaletteToRemove = 2;
+
+color.removePaletteByIndex(indexOfPaletteToRemove);
+```
+
+#### removePaletteByName
+This method allows you to remove a pelette by its name
+
+```javascript
+var nameOfPaletteToRemove = "YellowPalette";
+
+color.removePaletteByName(nameOfPalette);
+```
+
+#### getPaletteByIndex
+This method allows you to get a pelette by index obtained by *getPalette()* result
+
+```javascript
+var indexOfPaletteToGet = 2;
+
+color.getPaletteByIndex(indexOfPaletteToRemove);
+```
+
+#### getPaletteByName
+This method allows you to get a pelette by its name
+
+```javascript
+var nameOfPaletteToGet = "YellowPalette";
+
+color.getPaletteByName(nameOfPalette);
+```
