@@ -134,3 +134,54 @@ var nameOfPaletteToGet = "YellowPalette";
 
 color.getPaletteByName(nameOfPalette);
 ```
+
+#### getRandomStarterColor
+This method returns a random color from a presetted array of colors owened by this library
+
+```javascript
+
+color.getRandomStarterColor();
+```
+
+#### getRandomCustomColor
+This method returns a random color from a custom array of colors setted by you
+
+```javascript
+
+color.getRandomCustomColor();
+```
+
+#### getRandomPalette
+This method returns a random palette of colors 
+
+```javascript
+
+color.getRandomPalette();
+```
+
+
+#### getRandomColorFromPaletteIndex
+This method returns a random color from a palette selected by index obtained by *getPalette()* result
+
+```javascript
+
+color.getRandomColorFromPaletteIndex();
+```
+
+#### getRandomColorFromPaletteName
+This method returns a random color from a palette selected by its name
+
+```javascript
+
+color.getRandomColorFromPaletteName();
+```
+
+#### getRandomColorFromRandomPalette
+This method returns a random color from a random palette 
+
+```javascript
+
+color.getRandomColorFromRandomPalette();
+```
+
+
